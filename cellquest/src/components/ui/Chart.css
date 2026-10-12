@@ -1,0 +1,44 @@
+.cq-chart {
+  margin: 0;
+  padding: var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.cq-chart__title {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: var(--space-2);
+}
+
+.cq-chart svg {
+  width: 100%;
+  height: auto;
+}
+
+.cq-chart__axis {
+  stroke: var(--border-strong);
+  stroke-width: 1;
+}
+
+.cq-chart__line {
+  stroke: var(--accent);
+  stroke-width: 2.25;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.cq-chart__dot {
+  fill: var(--coral);
+  stroke: var(--surface);
+  stroke-width: 2;
+}
+
+.cq-chart__label {
+  fill: var(--text);
+  font-size: 11px;
+  opacity: 0.75;
+}

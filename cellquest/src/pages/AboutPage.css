@@ -1,0 +1,48 @@
+.about-page {
+  display: grid;
+  gap: var(--space-7);
+  max-width: 44rem;
+}
+
+.about-page header h1 {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  margin-bottom: var(--space-3);
+}
+
+.about-page header p,
+.about-page section p {
+  color: rgba(24, 35, 33, 0.82);
+}
+
+.about-page h2 {
+  font-size: 1.4rem;
+  margin-bottom: var(--space-3);
+}
+
+.about-page ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.about-page__notice {
+  padding: var(--space-5);
+  background: var(--sage);
+  border-radius: var(--radius);
+}
+
+.about-page__refs {
+  list-style: none;
+  padding: 0;
+}
+
+.about-page__refs li {
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-page__refs p {
+  margin-top: 0.25rem;
+  font-size: 0.95rem;
+}

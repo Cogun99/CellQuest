@@ -1,0 +1,95 @@
+.hero-cell {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.hero-cell__svg {
+  width: min(100%, 420px);
+  margin-inline: auto;
+  overflow: visible;
+}
+
+.hero-cell__body {
+  transform-origin: 160px 145px;
+  animation: cell-breathe 5.5s ease-in-out infinite;
+}
+
+.hero-cell__drift {
+  animation: drift-a 7s ease-in-out infinite;
+}
+
+.hero-cell__drift--b {
+  animation: drift-b 8.5s ease-in-out infinite;
+}
+
+.hero-cell.is-reduced .hero-cell__body,
+.hero-cell.is-reduced .hero-cell__drift,
+.hero-cell.is-reduced .hero-cell__drift--b {
+  animation: none;
+}
+
+.hero-cell__hit {
+  fill: transparent;
+  stroke: transparent;
+  cursor: pointer;
+  transition: stroke 160ms ease, fill 160ms ease;
+}
+
+.hero-cell__hit:hover,
+.hero-cell__hit:focus-visible {
+  fill: rgba(215, 131, 108, 0.12);
+  stroke: var(--coral);
+  stroke-width: 2;
+}
+
+.hero-cell__hit.is-selected {
+  fill: rgba(36, 92, 73, 0.1);
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.hero-cell__caption {
+  padding: var(--space-4);
+  border-left: 3px solid var(--accent);
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.hero-cell__caption h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
+}
+
+.hero-cell__caption p {
+  color: rgba(24, 35, 33, 0.8);
+}
+
+@keyframes cell-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.025);
+  }
+}
+
+@keyframes drift-a {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(6px, -4px);
+  }
+}
+
+@keyframes drift-b {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-5px, 5px);
+  }
+}

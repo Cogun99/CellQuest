@@ -1,0 +1,88 @@
+.scene {
+  width: 100%;
+}
+
+.scene svg {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+}
+
+.scene-label {
+  fill: #182321;
+  font-size: 11px;
+  font-family: var(--font-sans);
+}
+
+.scene-pulse {
+  transform-origin: center;
+  animation: soft-pulse 2.8s ease-in-out infinite;
+}
+
+.scene-flow {
+  animation: flow-nudge 1.4s ease-in-out infinite;
+}
+
+.scene-orbit {
+  animation: orbit-nudge 1.6s ease-in-out infinite alternate;
+}
+
+.scene-cross {
+  offset-rotate: 0deg;
+  animation: cross-membrane 2.4s linear infinite;
+}
+
+@keyframes soft-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes flow-nudge {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes orbit-nudge {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(4px, -3px);
+  }
+}
+
+@keyframes cross-membrane {
+  0% {
+    offset-distance: 0%;
+    opacity: 0.2;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    offset-distance: 100%;
+    opacity: 0.15;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-pulse,
+  .scene-flow,
+  .scene-orbit,
+  .scene-cross {
+    animation: none !important;
+  }
+}
